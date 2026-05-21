@@ -10,7 +10,6 @@ const Portfolio = () => {
   const portfolioImages = [
     { src: '/images/hero_makeup_1.png', title: 'Flawless Glow' },
     { src: '/images/1.jpeg', title: 'Bridal Glamour' },
-    { src: '/images/1.mp4', title: 'Bridal Glamour' },
     { src: '/images/2.jpeg', title: 'Flawless Finish' },
     { src: '/images/3.jpeg', title: 'Traditional Elegance' },
     { src: '/images/4.jpeg', title: 'Gele Masterpiece' },
