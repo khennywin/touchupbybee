@@ -70,42 +70,49 @@ const Home = () => {
     }
   };
 
-  const handleBookingSubmit = async (e) => {
+  // Your WhatsApp number in international format (no + or spaces)
+  const WHATSAPP_NUMBER = '2348164788888';
+
+  const serviceLabels = {
+    bridal_makeup: 'Bridal Makeup',
+    traditional_makeup: 'Traditional Makeup',
+    birthday_makeup: 'Birthday Makeup',
+    gele: 'Gele',
+    dinner_makeup: 'Dinner Makeup',
+    photoshoot_looks: 'Photoshoot Looks',
+  };
+
+  const locationLabels = {
+    studio: 'Studio (Ojodu/Ikeja)',
+    home_call: 'House Call (Lagos Mainland)',
+    home_call_island: 'House Call (Lagos Island)',
+  };
+
+  const handleBookingSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    const formData = {
-      fullName: e.target.fullName.value,
-      email: e.target.email.value,
-      eventDate: e.target.eventDate.value,
-      eventTime: e.target.eventTime.value,
-      service: e.target.service.value,
-      locationType: e.target.locationType.value,
-    };
 
-    try {
-      const response = await fetch('http://localhost:5000/api/book', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    const fullName    = e.target.fullName.value.trim();
+    const phone       = e.target.phone.value.trim();
+    const eventDate   = e.target.eventDate.value;
+    const eventTime   = e.target.eventTime.value;
+    const service     = serviceLabels[e.target.service.value] || e.target.service.value;
+    const locationType = locationLabels[e.target.locationType.value] || e.target.locationType.value;
 
-      const data = await response.json();
+    const message =
+      `Hello Touchupbybee! 🌸 I'd like to book an appointment.%0A%0A` +
+      `*Name:* ${encodeURIComponent(fullName)}%0A` +
+      `*Phone:* ${encodeURIComponent(phone)}%0A` +
+      `*Event Date:* ${encodeURIComponent(eventDate)}%0A` +
+      `*Preferred Start Time:* ${encodeURIComponent(eventTime)}%0A` +
+      `*Service:* ${encodeURIComponent(service)}%0A` +
+      `*Location:* ${encodeURIComponent(locationType)}%0A%0A` +
+      `Please let me know your availability. Thank you!`;
 
-      if (response.ok) {
-        alert(data.message || 'Booking request sent successfully!');
-        e.target.reset();
-      } else {
-        alert(data.error || 'Failed to send request. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('Network error. Please make sure the backend server is running.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+
+    e.target.reset();
+    setIsSubmitting(false);
   };
 
   return (
@@ -161,11 +168,11 @@ const Home = () => {
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="fullName">Full Name</label>
-                  <input type="text" id="fullName" required placeholder="Jane Doe" />
+                  <input type="text" id="fullName" name="fullName" required placeholder="Jane Doe" />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="email">Email Address</label>
-                  <input type="email" id="email" required placeholder="jane@example.com" />
+                  <label htmlFor="phone">WhatsApp / Phone Number</label>
+                  <input type="tel" id="phone" name="phone" required placeholder="e.g. 08012345678" />
                 </div>
               </div>
               <div className="form-row">
@@ -205,7 +212,7 @@ const Home = () => {
                 <strong>Important Booking Terms:</strong> A 50% non-refundable deposit is required to secure all dates. Early morning call times (before 6:00 AM) incur an additional premium early-call surcharge.
               </div>
               <button type="submit" className="submit-btn" disabled={isSubmitting}>
-                {isSubmitting ? 'Sending...' : 'Request Booking Availability'}
+                {isSubmitting ? 'Opening WhatsApp...' : '📲 Book via WhatsApp'}
               </button>
             </form>
           </div>
