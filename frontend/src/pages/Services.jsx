@@ -37,9 +37,34 @@ const Services = () => {
           <h2 className="section-title">Our <span>Signatures</span></h2>
           <div className="services-grid">
             <div className="service-card" ref={addToServices}>
-              <div className="service-icon">BM</div>
-              <h3>Bridal Makeup</h3>
-              <p>Flawless, long-lasting glam tailored to make you look stunning on your big day.</p>
+              <div className="service-icon">🥈</div>
+              <h3>Bridal – Silver Package</h3>
+              <ul style={{ textAlign: 'left', paddingLeft: '1.2rem', marginTop: '0.5rem', lineHeight: '1.8' }}>
+                <li>Consultation</li>
+                <li>White Wedding Makeup (no touch-up)</li>
+              </ul>
+            </div>
+            <div className="service-card" ref={addToServices}>
+              <div className="service-icon">🥇</div>
+              <h3>Bridal – Gold Package</h3>
+              <ul style={{ textAlign: 'left', paddingLeft: '1.2rem', marginTop: '0.5rem', lineHeight: '1.8' }}>
+                <li>Consultation</li>
+                <li>White Wedding Makeup</li>
+                <li>Traditional Makeup</li>
+                <li>Reception Makeup</li>
+              </ul>
+            </div>
+            <div className="service-card" ref={addToServices}>
+              <div className="service-icon">🏆</div>
+              <h3>Bridal – Bronze Package</h3>
+              <ul style={{ textAlign: 'left', paddingLeft: '1.2rem', marginTop: '0.5rem', lineHeight: '1.8' }}>
+                <li>Consultation</li>
+                <li>Traditional Makeup</li>
+                <li>White Wedding Makeup</li>
+                <li>Pre-Wedding Shoot</li>
+                <li>1 Complementary Bridesmaid</li>
+                <li>Touch-Up</li>
+              </ul>
             </div>
             <div className="service-card" ref={addToServices}>
               <div className="service-icon">TM</div>

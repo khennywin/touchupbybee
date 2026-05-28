@@ -74,7 +74,9 @@ const Home = () => {
   const WHATSAPP_NUMBER = '2348164788888';
 
   const serviceLabels = {
-    bridal_makeup: 'Bridal Makeup',
+    bridal_silver: 'Bridal Package – Silver (Consultation + White Wedding)',
+    bridal_gold: 'Bridal Package – Gold (Consultation + White + Traditional + Reception)',
+    bridal_bronze: 'Bridal Package – Bronze (Consultation + Traditional + White + Pre-Wedding Shoot + 1 Complementary Bridesmaid + Touch-Up)',
     traditional_makeup: 'Traditional Makeup',
     birthday_makeup: 'Birthday Makeup',
     gele: 'Gele',
@@ -84,8 +86,8 @@ const Home = () => {
 
   const locationLabels = {
     studio: 'Studio (Ojodu/Ikeja)',
-    home_call: 'House Call (Lagos Mainland)',
-    home_call_island: 'House Call (Lagos Island)',
+    home_call: 'Home Call (Lagos Mainland)',
+    home_call_island: 'Home Call (Lagos Island)',
   };
 
   const handleBookingSubmit = (e) => {
@@ -188,23 +190,29 @@ const Home = () => {
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="service">Required Service</label>
-                  <select id="service" required defaultValue="">
+                  <select id="service" name="service" required defaultValue="">
                     <option value="" disabled>Select a service...</option>
-                    <option value="bridal_makeup">Bridal Makeup</option>
-                    <option value="traditional_makeup">Traditional Makeup</option>
-                    <option value="birthday_makeup">Birthday Makeup</option>
-                    <option value="gele">Gele</option>
-                    <option value="dinner_makeup">Dinner Makeup</option>
-                    <option value="photoshoot_looks">Photoshoot Looks</option>
+                    <optgroup label="── Bridal Packages ──">
+                      <option value="bridal_silver">Bridal – Silver (Consultation + White Wedding)</option>
+                      <option value="bridal_gold">Bridal – Gold (Consultation + White + Traditional + Reception)</option>
+                      <option value="bridal_bronze">Bridal – Bronze (Consultation + Traditional + White + Pre-Wedding Shoot + 1 Complementary Bridesmaid + Touch-Up)</option>
+                    </optgroup>
+                    <optgroup label="── Other Services ──">
+                      <option value="traditional_makeup">Traditional Makeup</option>
+                      <option value="birthday_makeup">Birthday Makeup</option>
+                      <option value="gele">Gele</option>
+                      <option value="dinner_makeup">Dinner Makeup</option>
+                      <option value="photoshoot_looks">Photoshoot Looks</option>
+                    </optgroup>
                   </select>
                 </div>
                 <div className="form-group">
                   <label htmlFor="locationType">Location Preference</label>
-                  <select id="locationType" required defaultValue="">
+                  <select id="locationType" name="locationType" required defaultValue="">
                     <option value="" disabled>Select location type...</option>
                     <option value="studio">Studio (Ojodu/Ikeja)</option>
-                    <option value="home_call">House Call (Lagos Mainland)</option>
-                    <option value="home_call_island">House Call (Lagos Island)</option>
+                    <option value="home_call">Home Call (Lagos Mainland)</option>
+                    <option value="home_call_island">Home Call (Lagos Island)</option>
                   </select>
                 </div>
               </div>
