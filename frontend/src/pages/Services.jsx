@@ -36,35 +36,46 @@ const Services = () => {
         <div className="container">
           <h2 className="section-title">Our <span>Signatures</span></h2>
           <div className="services-grid">
-            <div className="service-card" ref={addToServices}>
-              <div className="service-icon">🥈</div>
-              <h3>Bridal – Silver Package</h3>
-              <ul style={{ textAlign: 'left', paddingLeft: '1.2rem', marginTop: '0.5rem', lineHeight: '1.8' }}>
-                <li>Consultation</li>
-                <li>White Wedding Makeup (no touch-up)</li>
+            <div className="service-card bridal-package" ref={addToServices}>
+              <div className="service-icon">✨</div>
+              <div className="package-badge gold-badge">Golden</div>
+              <h3>Bridal – Golden Package</h3>
+              <ul style={{ textAlign: 'left', paddingLeft: '1.2rem', marginTop: '0.5rem', lineHeight: '1.9' }}>
+                <li>1 Makeup Look</li>
+                <li>Free Consultation</li>
               </ul>
+              <div className="package-meta">
+                <span className="package-duration">⏱ 1 hr 20 min</span>
+                <span className="package-price">₦200,000</span>
+              </div>
             </div>
-            <div className="service-card" ref={addToServices}>
-              <div className="service-icon">🥇</div>
-              <h3>Bridal – Gold Package</h3>
-              <ul style={{ textAlign: 'left', paddingLeft: '1.2rem', marginTop: '0.5rem', lineHeight: '1.8' }}>
-                <li>Consultation</li>
-                <li>White Wedding Makeup</li>
-                <li>Traditional Makeup</li>
-                <li>Reception Makeup</li>
-              </ul>
-            </div>
-            <div className="service-card" ref={addToServices}>
-              <div className="service-icon">🏆</div>
-              <h3>Bridal – Bronze Package</h3>
-              <ul style={{ textAlign: 'left', paddingLeft: '1.2rem', marginTop: '0.5rem', lineHeight: '1.8' }}>
-                <li>Consultation</li>
-                <li>Traditional Makeup</li>
-                <li>White Wedding Makeup</li>
-                <li>Pre-Wedding Shoot</li>
-                <li>1 Complementary Bridesmaid</li>
+            <div className="service-card bridal-package" ref={addToServices}>
+              <div className="service-icon">💎</div>
+              <div className="package-badge diamond-badge">Diamond</div>
+              <h3>Bridal – Diamond Package</h3>
+              <ul style={{ textAlign: 'left', paddingLeft: '1.2rem', marginTop: '0.5rem', lineHeight: '1.9' }}>
+                <li>1 Makeup Look</li>
                 <li>Touch-Up</li>
+                <li>Free Consultation</li>
               </ul>
+              <div className="package-meta">
+                <span className="package-duration">⏱ 1 hr 40 min</span>
+                <span className="package-price">₦250,000</span>
+              </div>
+            </div>
+            <div className="service-card bridal-package" ref={addToServices}>
+              <div className="service-icon">👑</div>
+              <div className="package-badge platinum-badge">Platinum</div>
+              <h3>Bridal – Platinum Package</h3>
+              <ul style={{ textAlign: 'left', paddingLeft: '1.2rem', marginTop: '0.5rem', lineHeight: '1.9' }}>
+                <li>1 Makeup Look + 1 Change (Reception Look)</li>
+                <li>Free Consultation</li>
+                <li>Pre-Wedding Shoot (1 Look)</li>
+              </ul>
+              <div className="package-meta">
+                <span className="package-duration">⏱ 1 hr 45 min</span>
+                <span className="package-price">₦350,000</span>
+              </div>
             </div>
             <div className="service-card" ref={addToServices}>
               <div className="service-icon">TM</div>
@@ -91,6 +102,13 @@ const Services = () => {
               <h3>Photoshoot Looks</h3>
               <p>High-definition, camera-ready makeup that looks absolutely perfect in every shot.</p>
             </div>
+          </div>
+          <div className="surcharge-notice">
+            <span>⚠️</span>
+            <p>
+              <strong>Please Note:</strong> Early morning appointments attract an additional <strong>₦5,000</strong> surcharge.
+              Late coming also attracts <strong>₦5,000</strong>.
+            </p>
           </div>
         </div>
       </section>

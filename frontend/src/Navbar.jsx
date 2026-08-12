@@ -32,7 +32,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled || location.pathname !== '/' ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-          Touchupbybe
+          Touchupbybee
         </Link>
 
         {/* Desktop Menu */}

@@ -74,9 +74,9 @@ const Home = () => {
   const WHATSAPP_NUMBER = '2348164788888';
 
   const serviceLabels = {
-    bridal_silver: 'Bridal Package – Silver (Consultation + White Wedding)',
-    bridal_gold: 'Bridal Package – Gold (Consultation + White + Traditional + Reception)',
-    bridal_bronze: 'Bridal Package – Bronze (Consultation + Traditional + White + Pre-Wedding Shoot + 1 Complementary Bridesmaid + Touch-Up)',
+    bridal_golden: 'Bridal Package – Golden (1 Makeup Look + Free Consultation) | ₦200,000 | 1hr 20min',
+    bridal_diamond: 'Bridal Package – Diamond (1 Makeup Look + Touch-Up + Free Consultation) | ₦250,000 | 1hr 40min',
+    bridal_platinum: 'Bridal Package – Platinum (1 Makeup Look + Reception Change + Free Consultation + Pre-Wedding Shoot) | ₦350,000 | 1hr 45min',
     traditional_makeup: 'Traditional Makeup',
     birthday_makeup: 'Birthday Makeup',
     gele: 'Gele',
@@ -193,9 +193,9 @@ const Home = () => {
                   <select id="service" name="service" required defaultValue="">
                     <option value="" disabled>Select a service...</option>
                     <optgroup label="── Bridal Packages ──">
-                      <option value="bridal_silver">Bridal – Silver (Consultation + White Wedding)</option>
-                      <option value="bridal_gold">Bridal – Gold (Consultation + White + Traditional + Reception)</option>
-                      <option value="bridal_bronze">Bridal – Bronze (Consultation + Traditional + White + Pre-Wedding Shoot + 1 Complementary Bridesmaid + Touch-Up)</option>
+                      <option value="bridal_golden">Bridal – Golden (1 Look + Free Consultation) | ₦200,000</option>
+                      <option value="bridal_diamond">Bridal – Diamond (1 Look + Touch-Up + Free Consultation) | ₦250,000</option>
+                      <option value="bridal_platinum">Bridal – Platinum (1 Look + Reception Change + Pre-Wedding Shoot) | ₦350,000</option>
                     </optgroup>
                     <optgroup label="── Other Services ──">
                       <option value="traditional_makeup">Traditional Makeup</option>
@@ -217,7 +217,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="terms-text">
-                <strong>Important Booking Terms:</strong> A 50% non-refundable deposit is required to secure all dates. Early morning call times (before 6:00 AM) incur an additional premium early-call surcharge.
+                <strong>Important Booking Terms:</strong> A 50% non-refundable deposit is required to secure all dates. Early morning appointments attract an additional <strong>₦5,000</strong> surcharge. Late coming also attracts <strong>₦5,000</strong>.
               </div>
               <button type="submit" className="submit-btn" disabled={isSubmitting}>
                 {isSubmitting ? 'Opening WhatsApp...' : '📲 Book via WhatsApp'}
