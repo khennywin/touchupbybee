@@ -16,7 +16,10 @@ const Portfolio = () => {
     { src: '/images/6.jpeg', title: 'Soft Glam' },
     { src: '/images/7.jpeg', title: 'Red Carpet Ready' },
     { src: '/images/8.jpeg', title: 'Classic Beauty' },
-    { src: '/images/9.jpeg', title: 'Studio Session' }
+    { src: '/images/9.jpeg', title: 'Studio Session' },
+    { src: '/images/10.jpeg', title: 'Photoshoot Glam' },
+    { src: '/images/11.jpeg', title: 'Gele & Grace' },
+    { src: '/images/12.jpeg', title: 'Bold & Beautiful' },
   ];
 
   useEffect(() => {
